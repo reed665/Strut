@@ -9,11 +9,8 @@ define(['./view/ComponentButton',
 	'./view/WebFrameView',
 	'./view/VideoView',
 	'./ComponentFactory',
-	'lang',
-	'./view/ShapesDropdown',
-	'./ShapeCollection',
-	'./view/ShapeView',
-	'./model/Shape'],
+	'lang'
+	],
 	function(Button,
 			 ImportingComponentButton,
 			 Image,
@@ -25,12 +22,7 @@ define(['./view/ComponentButton',
 			 WebFrameView,
 			 VideoView,
 			 ComponentFactory,
-			 lang,
-			 ShapesDropdown,
-			 ShapeCollection,
-			 ShapeView,
-			 Shape) {
-		var availableShapes = new ShapeCollection();
+			 lang) {
 		var service = {
 			createButtons: function(editorModel) {
 				var buttons = [];
@@ -70,13 +62,6 @@ define(['./view/ComponentButton',
 					title: lang.insert_website,
 					editorModel: editorModel
 				}));
-
-				buttons.push(new ShapesDropdown(
-					availableShapes,
-					JST['strut.slide_components/ShapesDropdown'],
-					{class: 'group-dropdown',
-						editorModel: editorModel}
-				));
 
 				return buttons;
 			}
@@ -121,13 +106,6 @@ define(['./view/ComponentButton',
 				}, Video);
 
 				registry.register({
-					interfaces: 'strut.ComponentModel',
-					meta: {
-						type: 'Shape'
-					}
-				}, Shape);
-
-				registry.register({
 					interfaces: 'strut.ComponentView',
 					meta: {
 						type: 'Image'
@@ -154,13 +132,6 @@ define(['./view/ComponentButton',
 						type: 'Video'
 					}
 				}, VideoView);
-
-				registry.register({
-					interfaces: 'strut.ComponentView',
-					meta: {
-						type: 'Shape'
-					}
-				}, ShapeView);
 
 				ComponentFactory.initialize(registry);
 			}

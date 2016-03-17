@@ -36,9 +36,6 @@ function(Handlebars, Math2, marked, DeckUtils) {
 					case "WebFrame":
 						result = JST["strut.presentation_generator.impress/WebFrame"](componentModel.attributes);
 						break;
-					case "Shape":
-						result = JST["strut.presentation_generator.impress/Shape"](componentModel.attributes);
-						break;
 				}
 				return new Handlebars.SafeString(result);
 			});

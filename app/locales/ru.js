@@ -23,7 +23,6 @@ define({
 	delete: 'Удалить',
 	undo: 'Отменить',
 	redo: 'Повторить',
-	shapes: 'Фигуры',
 	single_slide_bg: 'Фон одного слайда',
 	invisible: 'Невидимый',
 	reset: 'Сброс',

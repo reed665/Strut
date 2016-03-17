@@ -23,7 +23,6 @@ define({
 	delete: 'Verwijderen',
 	undo: 'Ongedaan maken',
 	redo: 'Opnieuw',
-	shapes: 'Vormen',
 	single_slide_bg: 'Achtergrond per dia',
 	invisible: 'Onzichtbaar',
 	reset: 'Terugzetten',

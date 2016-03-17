@@ -23,7 +23,6 @@ define({
 	delete: 'Effacer',
 	undo: 'Annuler',
 	redo: 'Refaire',
-	shapes: 'Formes',
 	single_slide_bg: 'Single Slide Background',
 	invisible: 'Invisible',
 	reset: 'Réinitialiser',
