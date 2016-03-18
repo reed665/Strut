@@ -5,7 +5,7 @@ Strut
 
 [![Facelift](https://f.cloud.github.com/assets/1009003/515405/f1003c6a-be74-11e2-84b9-14776c652afb.png)](http://strut.io)
 
-#### A GUI / Authoring Tool for ImpressJS and Bespoke.js ####
+#### A GUI / Authoring Tool for ImpressJS ####
 
 Don't know what ImpressJS is?  Check out the ImpressJS demo presentation: http://bartaz.github.com/impress.js/#/bored
 
@@ -73,7 +73,6 @@ approach allows the user to add and remove plugins from 3rd parties at runtime.
 ### Acknowledgements ###
 
 * ImpressJS https://github.com/bartaz/impress.js/
-* Bespoke.js https://github.com/markdalgleish/bespoke.js
 * BackboneJS http://documentcloud.github.com/backbone/
 * Spectrum https://github.com/bgrins/spectrum
 * Etch http://etchjs.com/

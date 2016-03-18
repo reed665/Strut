@@ -87,20 +87,6 @@ function(BackgroundProvider, Backgrounds, Surfaces, StylesheetProvider, ClassEdi
 					overflow: true
 				}
 			}, classEditorFactory);
-
-			/*
-			registry.register({
-				interfaces: 'strut.ThemeProvider',
-				meta: {
-					modes: {
-						slideEditor: true
-					},
-					engines: {
-						bespoke: true
-					}
-				}
-			}, bespokeThemes)
-			*/
 		}
 	}
 });
