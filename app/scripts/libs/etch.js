@@ -71,7 +71,7 @@ define(['libs/backbone'], function(Backbone) {
       'click .etch-justify-center': 'justifyCenter',
       'click .etch-justify-right': 'justifyRight',
       'click .etch-ordered-list': 'toggleOrderedList',
-      'click .etch-link': 'toggleLink',
+      // 'click .etch-link': 'toggleLink',
       'click .etch-image': 'getImage',
       'click .etch-save': 'save',
       'click .etch-clear-formatting': 'clearFormatting',
@@ -264,42 +264,42 @@ define(['libs/backbone'], function(Backbone) {
       range.surroundContents(h3);
     },
 
-    urlPrompt: function(callback) {
-      // This uses the default browser UI prompt to get a url.
-      // Override this function if you want to implement a custom UI.
+    // urlPrompt: function(callback) {
+    //   // This uses the default browser UI prompt to get a url.
+    //   // Override this function if you want to implement a custom UI.
         
-      var url = prompt('Enter a url', 'http://');
+    //   var url = prompt('Enter a url', 'http://');
         
-      // Ensure a new link URL starts with http:// or https:// 
-      // before it's added to the DOM.
-      //
-      // NOTE: This implementation will disallow relative URLs from being added
-      // but will make it easier for users typing external URLs.
-      if (/^((http|https)...)/.test(url)) {
-        callback(url);
-      } else {
-        callback("http://" + url);
-      }
-    },
+    //   // Ensure a new link URL starts with http:// or https:// 
+    //   // before it's added to the DOM.
+    //   //
+    //   // NOTE: This implementation will disallow relative URLs from being added
+    //   // but will make it easier for users typing external URLs.
+    //   if (/^((http|https)...)/.test(url)) {
+    //     callback(url);
+    //   } else {
+    //     callback("http://" + url);
+    //   }
+    // },
     
-    toggleLink: function(e) {
-      e.preventDefault();
-      var range = window.getSelection().getRangeAt(0);
+    // toggleLink: function(e) {
+    //   e.preventDefault();
+    //   var range = window.getSelection().getRangeAt(0);
 
-      // are we in an anchor element?
-      if (range.startContainer.parentNode.tagName === 'A' || range.endContainer.parentNode.tagName === 'A') {
-        // unlink anchor
-        document.execCommand('unlink', false, null);
-      } else {
-        // promt for url and create link
-        this.urlPrompt(function(url) {
-          document.execCommand('createLink', false, url);
-          // sets the link to new tab / window
-          // needs to get the range from fresh since the tree changed
-          window.getSelection().getRangeAt(0).startContainer.parentNode.setAttribute('target','_blank');
-        });
-      }
-    },
+    //   // are we in an anchor element?
+    //   if (range.startContainer.parentNode.tagName === 'A' || range.endContainer.parentNode.tagName === 'A') {
+    //     // unlink anchor
+    //     document.execCommand('unlink', false, null);
+    //   } else {
+    //     // promt for url and create link
+    //     this.urlPrompt(function(url) {
+    //       document.execCommand('createLink', false, url);
+    //       // sets the link to new tab / window
+    //       // needs to get the range from fresh since the tree changed
+    //       window.getSelection().getRangeAt(0).startContainer.parentNode.setAttribute('target','_blank');
+    //     });
+    //   }
+    // },
 
     toggleUnorderedList: function(e) {
       e.preventDefault();
