@@ -56,20 +56,31 @@
 
 <script src="scripts/onready.js"></script>
 <script src="scripts/loadPresentation.js"></script>
+<script src="scripts/impressConfig.js"></script>
 <script>
 ready(function() {
-    if (document.getElementById('launched-placeholder'))
+    if (document.getElementById('launched-placeholder')) {
         loadPresentation();
+    }
 
     if (!window.presStarted) {
         startPres(document, window);
-        impress().init();   
+        var api = impress();
+        api.init();
+
+        document.addEventListener('impress:stepenter', function(e){
+            if (typeof timing !== 'undefined') clearInterval(timing);
+            // custom duration can be reached by adding 'data-transition-duration' attr to the slide
+            var transitionDuration =  e.target.getAttribute('data-transition-duration');
+            var duration = transitionDuration || impressConfig.slideDuration;
+            timing = setInterval(api.next, duration);
+        });
     }
 
-    if ("ontouchstart" in document.documentElement) { 
-        document.querySelector(".hint").innerHTML = 
-            "<p>Tap on the left or right to navigate</p>";
-    }
+    // if ("ontouchstart" in document.documentElement) { 
+    //     document.querySelector(".hint").innerHTML = 
+    //         "<p>Tap on the left or right to navigate</p>";
+    // }
 });
 </script>
 </head>
