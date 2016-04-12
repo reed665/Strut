@@ -149,8 +149,8 @@ function(Backbone, Imgup) {
 			return this.$el;
 		},
 		constructor: function ItemImportModal() {
-		Backbone.View.prototype.constructor.apply(this, arguments);
-	}
+			Backbone.View.prototype.constructor.apply(this, arguments);
+		}
 	});
 
 	return {

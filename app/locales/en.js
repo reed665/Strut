@@ -1,5 +1,6 @@
 define({
 	insert_image: 'Insert Image',
+	insert_media: 'Insert Media',
 	insert_video: 'Insert Video',
 	insert_website: 'Insert Website',
 	add_slide: 'Add Slide',
@@ -12,6 +13,7 @@ define({
 	new_: 'New',
 	text: 'Text',
 	image: 'Image',
+	media: 'Media',
 	video: 'Video',
 	website: 'Website',
 	present: 'Present',

@@ -1,5 +1,6 @@
 define({
 	insert_image: 'Вставить картинку',
+	insert_media: 'Вставить медиа',
 	insert_video: 'Вставить видео',
 	insert_website: 'Вставить ссылку',
 	add_slide: 'Добавить слайд',
@@ -12,6 +13,7 @@ define({
 	new_: 'Создать',
 	text: 'Текст',
 	image: 'Картинка',
+	media: 'Медиа',
 	video: 'Видео',
 	website: 'Ссылка',
 	present: 'Показать',

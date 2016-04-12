@@ -1,10 +1,12 @@
 define(['./view/ComponentButton',
 	'./view/ImportingComponentButton',
 	'./model/Image',
+	'./model/Media',
 	'./model/TextBox',
 	'./model/WebFrame',
 	'./model/Video',
 	'./view/ImageView',
+	'./view/MediaView',
 	'./view/TextBoxView',
 	'./view/WebFrameView',
 	'./view/VideoView',
@@ -14,10 +16,12 @@ define(['./view/ComponentButton',
 	function(Button,
 			 ImportingComponentButton,
 			 Image,
+			 Media,
 			 TextBox,
 			 WebFrame,
 			 Video,
 			 ImageView,
+			 MediaView,
 			 TextBoxView,
 			 WebFrameView,
 			 VideoView,
@@ -42,6 +46,17 @@ define(['./view/ComponentButton',
 					title: lang.insert_image,
 					editorModel: editorModel,
 					browsable: true
+				}));
+
+				buttons.push(new ImportingComponentButton({
+					componentType: 'Media',
+					icon: 'icon-picture',
+					name: lang.media,
+					// tag: 'img',
+					tag: 'div',
+					title: lang.insert_media,
+					editorModel: editorModel,
+					media: true
 				}));
 
 				buttons.push(new ImportingComponentButton({
@@ -84,6 +99,13 @@ define(['./view/ComponentButton',
 					}
 				}, Image);
 
+				// registry.register({
+				// 	interfaces: 'strut.ComponentModel',
+				// 	meta: {
+				// 		type: 'Image'
+				// 	}
+				// }, Media);
+
 				registry.register({
 					interfaces: 'strut.ComponentModel',
 					meta: {
@@ -111,6 +133,13 @@ define(['./view/ComponentButton',
 						type: 'Image'
 					}
 				}, ImageView);
+
+				registry.register({
+					interfaces: 'strut.ComponentView',
+					meta: {
+						type: 'Image'
+					}
+				}, MediaView);
 
 				registry.register({
 					interfaces: 'strut.ComponentView',
