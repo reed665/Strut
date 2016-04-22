@@ -1,5 +1,5 @@
-define(['./ComponentButton', 'tantaman/web/widgets/ItemImportModal'],
-	function(ComponentButton, ItemImportModal) {
+define(['./ComponentButton', 'tantaman/web/widgets/ItemImportModal', 'tantaman/web/widgets/ItemImportModalMedia'],
+	function(ComponentButton, ItemImportModal, ItemImportModalMedia) {
 		'use strict';
 
 		/**
@@ -13,7 +13,12 @@ define(['./ComponentButton', 'tantaman/web/widgets/ItemImportModal'],
 			initialize: function() {
 				ComponentButton.prototype.initialize.apply(this, arguments);
 
-				this._modal = ItemImportModal.get(this.options);
+				if (this.options.componentType.toLowerCase() === 'media') {
+					this._modal = ItemImportModalMedia.get(this.options);
+				} else {
+					this._modal = ItemImportModal.get(this.options);
+					
+				}
 				this._itemImported = this._itemImported.bind(this);
 			},
 
@@ -40,4 +45,4 @@ define(['./ComponentButton', 'tantaman/web/widgets/ItemImportModal'],
 				ComponentButton.prototype.constructor.apply(this, arguments);
 			}
 		});
-	})
+	});

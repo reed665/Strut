@@ -52,11 +52,8 @@ define(['./view/ComponentButton',
 					componentType: 'Media',
 					icon: 'icon-picture',
 					name: lang.media,
-					// tag: 'img',
-					tag: 'div',
 					title: lang.insert_media,
-					editorModel: editorModel,
-					media: true
+					editorModel: editorModel
 				}));
 
 				buttons.push(new ImportingComponentButton({
@@ -134,12 +131,12 @@ define(['./view/ComponentButton',
 					}
 				}, ImageView);
 
-				registry.register({
-					interfaces: 'strut.ComponentView',
-					meta: {
-						type: 'Image'
-					}
-				}, MediaView);
+				// registry.register({
+				// 	interfaces: 'strut.ComponentView',
+				// 	meta: {
+				// 		type: 'Image'
+				// 	}
+				// }, MediaView);
 
 				registry.register({
 					interfaces: 'strut.ComponentView',

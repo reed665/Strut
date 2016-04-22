@@ -172,6 +172,13 @@ function(Backbone, Imgup) {
 			return previous;
 		},
 
+		// get: function(options) {
+		// 	var modal = new Modal(options);
+		// 	modal.render();
+		// 	$('modals').append(modal.$el);
+		// 	return modal;
+		// },
+
 		ctor: Modal
 	};
 });

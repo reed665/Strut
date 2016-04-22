@@ -42,10 +42,10 @@ define(['libs/backbone'],
 			render: function() {
 				this.$el.html('<i class="' + this.options.icon + ' icon-white"></i>' + this.options.name);
 				return this;
-			},
-
-			constructor: function ComponentButton() {
-				Backbone.View.prototype.constructor.apply(this, arguments);
 			}
+
+			// constructor: function ComponentButton() {
+			// 	Backbone.View.prototype.constructor.apply(this, arguments);
+			// }
 		});
 	});
