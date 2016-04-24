@@ -229,12 +229,19 @@ and (max-device-width : 1024px)  {
 }
 
 
-
-
-select.media-select {
-  width: 300px;
-  
+// media select
+// .media-select {
+//   background: red !important;
+//   text-align: center !important;
+// }
+.media-select .pic {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 6px;
+  padding: 6px;
+  background: #ccc;
 }
-select.media-select option {
-  
+.media-select .pic.selected {
+  background: #666;
 }

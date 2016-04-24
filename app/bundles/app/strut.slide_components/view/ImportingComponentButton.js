@@ -12,12 +12,10 @@ define(['./ComponentButton', 'tantaman/web/widgets/ItemImportModal', 'tantaman/w
 			 */
 			initialize: function() {
 				ComponentButton.prototype.initialize.apply(this, arguments);
-
-				if (this.options.componentType.toLowerCase() === 'media') {
+				if (this.options.isMedia) {
 					this._modal = ItemImportModalMedia.get(this.options);
 				} else {
 					this._modal = ItemImportModal.get(this.options);
-					
 				}
 				this._itemImported = this._itemImported.bind(this);
 			},

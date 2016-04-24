@@ -156,7 +156,7 @@ function(Backbone, Imgup) {
 	return {
 		get: function(options) {
 			var previous = modalCache[options.tag];
-
+			// log('Options:', options.tag);
 			if (!previous) {
 				previous = new Modal(options);
 				previous.$el.bind('destroyed', function() {
