@@ -15,6 +15,7 @@ define(["libs/backbone",
 		defaults = {
 			z: 0,
 			impScale: 3,
+			durTime: 5000,
 			rotateX: 0,
 			rotateY: 0,
 			rotateZ: 0

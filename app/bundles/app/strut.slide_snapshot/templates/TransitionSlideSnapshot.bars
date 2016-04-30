@@ -24,4 +24,8 @@
 	<span class="label scales">↔</span>
 	<input class="position" type="text" data-option="scale" value="{{impScale}}"/>
 </div>
+<div class="showTime form-inline">
+	<span class="label time">t</span>
+	<input type="text" class="timeInput" data-option="time" value="{{durTime}}" />
+</div>
 <span class="badge badge-inverse"> </span>

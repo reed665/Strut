@@ -11,6 +11,11 @@ define(["./ComponentView", "common/Math2"], function(ComponentView, Math2) {
 	return ComponentView.extend({
 		transforms: ["rotateX", "rotateY", "rotateZ", "scale"],
 
+		minValues: {
+			scale: 3,
+			time: 1500
+		},
+
 		/**
 		 * Returns list of events, tracked by this view.
 		 *
@@ -29,6 +34,7 @@ define(["./ComponentView", "common/Math2"], function(ComponentView, Math2) {
 				"deltadrag span[data-delta='rotateZ']": "rotateZ",
 				"change input[data-option='z']": "manualMoveZ",
 				"change input[data-option='scale']": "manualMoveScale",
+				"change input[data-option='time']": "manualChangeTime",
 				"change input[data-option='rotateX']": "manualRotX",
 				"change input[data-option='rotateY']": "manualRotY",
 				"change input[data-option='rotateZ']": "manualRotZ"
@@ -54,7 +60,11 @@ define(["./ComponentView", "common/Math2"], function(ComponentView, Math2) {
 		},
 
 		manualMoveScale: function(e) {
-			return this.model.setFloat("impScale", e.target.value);
+			return this.model.setFloat("impScale", Math.max( e.target.value, this.minValues.scale ));
+		},
+
+		manualChangeTime: function(e) {
+			return this.model.setInt("durTime", Math.max( e.target.value, this.minValues.time ));
 		},
 
 		manualMoveZ: function(e) {

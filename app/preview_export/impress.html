@@ -68,10 +68,9 @@ ready(function() {
         var api = impress();
         api.init();
 
-        document.addEventListener('impress:stepenter', function(e){
+        document.addEventListener('impress:stepenter', function(e) {
             if (typeof timing !== 'undefined') clearInterval(timing);
-            // custom duration can be reached by adding 'data-transition-duration' attr to the slide
-            var transitionDuration =  e.target.getAttribute('data-transition-duration');
+            var transitionDuration = parseInt( e.target.getAttribute('data-transition-duration') );
             var duration = transitionDuration || impressConfig.slideDuration;
             timing = setInterval(api.next, duration);
         });

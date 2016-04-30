@@ -111,8 +111,27 @@
 	font-size: 18px;
 }
 
+.component .showTime {
+	position: absolute;
+	right: 0;
+	bottom: -30px;
+	font-size: 20px;
+
+}
+
+.component .showTime .label.time {
+
+}
+
+.component .showTime .timeInput {
+	width: 50px;
+}
+
 .component input {
-	width: 25px;
+	// width: 25px;
+	width: 32px;
+	text-align: center;
+
 	height: 12px;
 	line-height: 12px;
 }

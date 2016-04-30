@@ -37,6 +37,7 @@ define(["strut/slide_components/view/ThreeDRotatableComponentView",
 			initialize: function() {
 				ThreeDComponentView.prototype.initialize.apply(this, arguments);
 				this.model.on('change:impScale', this._impScaleChanged, this);
+				this.model.on('change:durTime', this._durTimeChanged, this);
 				this.model.on('change:background', this._backgroundChanged, this);
 				this.model.on('change:surface', this._backgroundChanged, this);
 				this.options.deck.on('change:background', this._backgroundChanged, this);
@@ -79,8 +80,10 @@ define(["strut/slide_components/view/ThreeDRotatableComponentView",
 			/**
 			 * React on slide scale transition change.
 			 */
-			_impScaleChanged: function() {
-				var scaleFactor = this.model.get('impScale') | 0;
+			_impScaleChanged: function(e) {
+				var scaleFactor = this.model.get('impScale');
+				this.$('input[data-option=scale]').val( scaleFactor );
+
 				var $content = this.$el.find('.content');
 				var width = overviewSize.width * scaleFactor;
 				var height = overviewSize.height * scaleFactor;
@@ -91,6 +94,11 @@ define(["strut/slide_components/view/ThreeDRotatableComponentView",
 				};
 				$content.css(size);
 				this.slideDrawer.setSize(size);
+			},
+
+			_durTimeChanged: function() {
+				var duration = this.model.get('durTime');
+				this.$('input[data-option=time]').val( duration );
 			},
 
 			/**
@@ -123,7 +131,10 @@ define(["strut/slide_components/view/ThreeDRotatableComponentView",
 
 				var $el = this.$el.find('.slideDrawer');
 				this.slideDrawer = new SlideDrawer(this.model, $el);
-				this.slideDrawer.applyBackground(this.model, this.options.deck, {transparentForDeckSurface: true, surfaceForDefault: true});
+				this.slideDrawer.applyBackground(this.model, this.options.deck, {
+					transparentForDeckSurface: true, 
+					surfaceForDefault: true
+				});
 
 				this._impScaleChanged();
 
