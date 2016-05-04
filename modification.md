@@ -1,22 +1,11 @@
-Модификация Strut
-=================
+Strut modification
+==================
 
-## чистка
-+ ~~на выходе оставить только impress.js (and reveal), все остальное удалить (bespoke, handouts)~~
-+ убрать лишние компоненты
-  + ~~Shapes~~
-  + Video (?)
-+ ~~убрать dropdown у кнопки impress~~ // (закомментил часть кода в Button.bars)
+## [Impress.js](https://github.com/impress/impress.js)
++ Remove overview slide
++ Auto-detecting screen resolution
 
-## компоненты
-+ Image: картинки выбирать из тех, что есть (ajax-запрос, в ответ json -> выпадающий список с поиском)
-
-## [редактор контента](http://etchjs.com/)
-+ ~~убрать интерактивные элементы (гиперссылки, ...)~~
-
-## режим просмотра
-+ ~~при отображении слайдов сделать автопоказ (по умолчанию 5 сек между слайдами)~~
-+ убрать возможность управления ходом презентации (?)
-
-## режим overview
-+ ~~добавить в overview возможность для каждого слайда выставить время показа~~
+## Components
++ Video select like Image select
++ Autoplay when slide is active pause otherwise
++ Sound off
