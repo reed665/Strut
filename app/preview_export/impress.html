@@ -58,29 +58,24 @@
 <script src="scripts/loadPresentation.js"></script>
 <script src="scripts/impressConfig.js"></script>
 <script>
-ready(function() {
-    if (document.getElementById('launched-placeholder')) {
-        loadPresentation();
-    }
+    ready(function() {
+        if (document.getElementById('launched-placeholder')) {
+            loadPresentation();
+        }
 
-    if (!window.presStarted) {
-        startPres(document, window);
-        var api = impress();
-        api.init();
+        if (!window.presStarted) {
+            startPres(document, window);
+            var api = impress();
+            api.init();
 
-        document.addEventListener('impress:stepenter', function(e) {
-            if (typeof timing !== 'undefined') clearInterval(timing);
-            var transitionDuration = parseInt( e.target.getAttribute('data-transition-duration') );
-            var duration = transitionDuration || impressConfig.slideDuration;
-            timing = setInterval(api.next, duration);
-        });
-    }
-
-    // if ("ontouchstart" in document.documentElement) { 
-    //     document.querySelector(".hint").innerHTML = 
-    //         "<p>Tap on the left or right to navigate</p>";
-    // }
-});
+            document.addEventListener('impress:stepenter', function(e) {
+                if (typeof timing !== 'undefined') clearInterval(timing);
+                var transitionDuration = parseInt( e.target.getAttribute('data-transition-duration') );
+                var duration = transitionDuration || impressConfig.slideDuration;
+                timing = setInterval(api.next, duration);
+            });
+        }
+    });
 </script>
 </head>
 <body class="impress-not-supported">

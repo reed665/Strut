@@ -352,14 +352,14 @@ var innerBg = document.querySelector('.innerBg');
                 meta.name = 'viewport';
                 document.head.appendChild(meta);
             }
-            
+
             // initialize configuration object
             var rootData = root.dataset;
             config = {
                 width: toNumber( rootData.width, defaults.width ),
                 height: toNumber( rootData.height, defaults.height ),
                 maxScale: toNumber( rootData.maxScale, defaults.maxScale ),
-                minScale: toNumber( rootData.minScale, defaults.minScale ),                
+                minScale: toNumber( rootData.minScale, defaults.minScale ),
                 perspective: toNumber( rootData.perspective, defaults.perspective ),
                 transitionDuration: toNumber( rootData.transitionDuration, defaults.transitionDuration )
             };
@@ -823,10 +823,10 @@ var innerBg = document.querySelector('.innerBg');
 // will help somebody learn at least some part of it.
 
 
-document.addEventListener("keydown", function(e) {
-    if (e.keyCode == 27) {
-        impress().goto('overview');
-    }
-}, false);
+// document.addEventListener("keydown", function(e) {
+//     if (e.keyCode == 27) {
+//         impress().goto('overview');
+//     }
+// }, false);
 
 }
