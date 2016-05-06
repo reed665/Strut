@@ -168,6 +168,8 @@ var innerBg = document.querySelector('.innerBg');
             scale = config.minScale;
         }
         
+        console.log('scale:', scale);
+        
         return scale;
     };
     
@@ -205,8 +207,8 @@ var innerBg = document.querySelector('.innerBg');
     
     // some default config values.
     var defaults = {
-        width: 1366,
-        height: 768,
+        width: 1920,
+        height: 1080,
         minScale: 0,
         maxScale: 4,
         
