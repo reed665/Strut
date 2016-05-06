@@ -3,7 +3,7 @@ Strut modification
 
 ## [Impress.js](https://github.com/impress/impress.js)
 + ~~Remove overview slide~~
-+ Auto-detecting screen resolution
++ ~~Show presentation fullscreen (16:9)~~
 
 ## Components
 + Background and Surface Image select
