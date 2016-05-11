@@ -12,7 +12,8 @@ define(['./ComponentButton', 'tantaman/web/widgets/ItemImportModal', 'tantaman/w
 			 */
 			initialize: function() {
 				ComponentButton.prototype.initialize.apply(this, arguments);
-				if (this.options.isMedia) {
+				var mediaComponents = ['Image', 'Video'];
+				if (_.include(mediaComponents, this.options.componentType)) {
 					this._modal = ItemImportModalMedia.get(this.options);
 				} else {
 					this._modal = ItemImportModal.get(this.options);

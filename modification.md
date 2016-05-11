@@ -6,7 +6,7 @@ Strut modification
 + ~~Show presentation fullscreen (16:9)~~
 
 ## Components
-+ Background and Surface Image select
-+ Video select like Image select
++ ~~Background and Surface Image select~~
++ ~~Video select like Image select~~
 + Autoplay when slide is active pause otherwise
 + Sound off

@@ -1,9 +1,9 @@
 define(['tantaman/web/widgets/Dropdown',
 		'strut/deck/Utils',
-		'tantaman/web/widgets/ItemImportModal',
+		'tantaman/web/widgets/ItemImportModalMedia',
 		'./ColorChooserModal',
 		'lang'],
-function(View, DeckUtils, ItemImportModal, ColorChooserModal, lang) {
+function(View, DeckUtils, ItemImportModalMedia, ColorChooserModal, lang) {
 	function BackgroundProvider(opts) {
 		var backgrounds = opts.backgrounds;
 		var editorModel = opts.editorModel;
@@ -26,13 +26,15 @@ function(View, DeckUtils, ItemImportModal, ColorChooserModal, lang) {
 		this._setBackgroundImage = this._setBackgroundImage.bind(this);
 	}
 
-	var imageChooserModal = ItemImportModal.get({
+	var imageChooserModal = ItemImportModalMedia.get({
+		componentType: 'Image',
 		tag: 'img',
+		icon: 'icon-picture',
 		name: lang.image,
 		title: lang.insert_image,
-		icon: 'icon-picture',
-		browsable: true
 	});
+
+
 	var colorChooserModal = new ColorChooserModal();
 	colorChooserModal.render();
 	$('#modals').append(colorChooserModal.$el);

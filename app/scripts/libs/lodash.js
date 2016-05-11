@@ -8,7 +8,7 @@
 ;(function(window, undefined) {
   'use strict';
 
-  console.log("LOADING LODASH!!!!")
+  // console.log("LOADING LODASH!!!!");
 
   /** Detect free variable `exports` */
   var freeExports = typeof exports == 'object' && exports &&

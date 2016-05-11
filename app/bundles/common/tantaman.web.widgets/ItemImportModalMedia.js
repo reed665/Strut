@@ -66,7 +66,6 @@ function(Backbone) {
 			return this.$el.modal('show');
 		},
 		okClicked: function() {
-			// log('Adding selected media to slide...');
 			if (!this.$okBtn.hasClass('disabled')) {
 				this.cb(this.src);
 				return this.$el.modal('hide');
@@ -106,8 +105,7 @@ function(Backbone) {
 			Backbone.View.prototype.constructor.apply(this, arguments);
 		},
 		getMedia: function(cb) {
-			// console.log('Media url:', this.options.mediaUrl);
-			// TODO: get media.json through ajax
+			// TODO: get media.json through ajax call
 			var media = [];
 			for(var i=0; i<10; i++) {
 				this.media.forEach(function(mediaItem) {
@@ -139,7 +137,14 @@ function(Backbone) {
 
 			// TODO:
 			// this.src = selMed.Url;
-			this.src = 'http://pbs.twimg.com/profile_images/378800000532546226/dbe5f0727b69487016ffd67a6689e75a.jpeg';
+			var compType = this.options.componentType;
+			if (compType === 'Image') {
+				this.src = 'http://pbs.twimg.com/profile_images/378800000532546226/dbe5f0727b69487016ffd67a6689e75a.jpeg';
+			} else if (compType === 'Video') {
+				this.src = 'http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_60fps_normal.mp4';
+			} else {
+				console.log('unknown component type: ' + compType);
+			}
 		}
 	});
 

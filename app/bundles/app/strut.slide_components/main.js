@@ -40,18 +40,7 @@ define(['./view/ComponentButton',
 					name: lang.image,
 					tag: 'img',
 					title: lang.insert_image,
-					editorModel: editorModel,
-					browsable: true
-				}));
-
-				buttons.push(new ImportingComponentButton({
-					componentType: 'Image',
-					isMedia: true,
-					icon: 'icon-picture',
-					name: lang.media,
-					title: lang.insert_media,
-					editorModel: editorModel,
-					mediaUrl: 'media url goes here...'
+					editorModel: editorModel
 				}));
 
 				buttons.push(new ImportingComponentButton({
