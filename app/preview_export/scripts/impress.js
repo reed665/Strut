@@ -168,7 +168,7 @@ var innerBg = document.querySelector('.innerBg');
             scale = config.minScale;
         }
         
-        console.log('scale:', scale);
+        // console.log('scale:', scale);
         
         return scale;
     };

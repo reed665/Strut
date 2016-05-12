@@ -1,6 +1,7 @@
 {{> ComponentContainer}}
-<video controls>
-	<source src="{{src}}" type="{{srcType}}" preload="metadata"></source>
+<video loop muted>
+	<source src="{{src}}" type="{{srcType}}"></source>
+	Your browser does not support the video tag.
 </video>
 </div>
 </div>

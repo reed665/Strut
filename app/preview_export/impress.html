@@ -74,6 +74,25 @@
                 var duration = transitionDuration || impressConfig.slideDuration;
                 timing = setInterval(api.next, duration);
             });
+
+            document.addEventListener('impress:stepenter', function(e) {
+                playPauseVids(e.target, 'play');
+            });
+
+            document.addEventListener('impress:stepleave', function(e) {
+                playPauseVids(e.target, 'pause');
+            });
+        }
+
+        function playPauseVids(el, action) {
+            var vids = el.getElementsByTagName('video');
+            for (var i=0; i<vids.length; i++) {
+                if (action === 'play') {
+                    vids[i].play();
+                } else if (action === 'pause') {
+                    vids[i].pause();
+                }
+            }
         }
     });
 </script>

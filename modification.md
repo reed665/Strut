@@ -8,5 +8,5 @@ Strut modification
 ## Components
 + ~~Background and Surface Image select~~
 + ~~Video select like Image select~~
-+ Autoplay when slide is active pause otherwise
-+ Sound off
++ ~~Autoplay when slide is active pause otherwise~~
++ ~~Sound off~~
