@@ -6,11 +6,14 @@
 	<h4>Choose a media to insert:</h4>
 	<div class="media-select">
 		{{#each media}}
+		<div class="item">
 			<img class="pic"
 				 data-index="{{@index}}"
 			 	 title="fileName: {{FileName}}&#013;width: {{Width}}px&#013;height: {{Height}}px&#013;owner: {{Owner}}&#013;modified{{Modified}}"
 				 src="{{ThumbUrl}}"
 				 alt="{{FileName}}">
+			<div class="title">{{shortFileName}}</div>
+		 </div>
 		{{/each}}
 	</div>
 </div>

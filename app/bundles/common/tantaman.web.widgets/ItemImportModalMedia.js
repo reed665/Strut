@@ -11,7 +11,7 @@ function(Backbone) {
 				"ScreenIndex":  1,
 				"Groups":       [],
 				"Owner":        "serge",
-				"FileName":     "Lysbilde1.JPG",
+				"FileName":     "Lysbilde1_This-is-long-file-name.JPG",
 				"Id":           "09d1b441-105f-4773-a752-ecc9a2bf5ff7",
 				"Size":         1429.29,
 				"Width":        8000,
@@ -122,12 +122,23 @@ function(Backbone) {
 					return cb();
 				}
 
-				_this.options.media = media;
+				_this.options.media = media.map(function(obj) {
+					obj.shortFileName = _this._shortenMediaFileName(obj.FileName, 18);
+					return obj;
+				});
+
 				cb();
 			});
 		},
+		_shortenMediaFileName: function(fileName, maxChars) {
+			if (fileName.length <= maxChars - 3) {
+				return fileName;
+			}
+			// return fileName.slice(0, maxChars) + '&hellip;';
+			return fileName.slice(0, maxChars - 3) + '...';
+		},
 		picClicked: function(e) {
-			var selected = this.$mediaSelect.find('.selected');
+			var selected = this.$('.selected');
 			selected.removeClass('selected');
 			$(e.target).addClass('selected');
 			this.$okBtn.removeClass('disabled');

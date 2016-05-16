@@ -6,6 +6,7 @@ Strut modification
 + New and Save menu items only in first section
 
 ## Components
++ ~~Show short FileName of Image and Video~~
 + Seachbox for Image and Video
 + Set max size of insering Image and Video
 

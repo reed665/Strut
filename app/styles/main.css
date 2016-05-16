@@ -230,10 +230,12 @@ and (max-device-width : 1024px)  {
 
 
 // media select
-// .media-select {
-//   background: red !important;
-//   text-align: center !important;
-// }
+.media-select {
+  text-align: center;
+}
+.media-select .item {
+  display: inline-block;
+}
 .media-select .pic {
   display: inline-block;
   width: 100px;
