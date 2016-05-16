@@ -11,3 +11,9 @@ Strut modification
 
 ## Bugs
 + Unintended scroll when dragging components
+
+## Strut player
++ Pick out Strut Presentation player from whole Strut project
+
+## Misc
++ Remove tablets button (?)
