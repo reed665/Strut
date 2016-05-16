@@ -1,12 +1,13 @@
 Strut modification
 ==================
 
-## [Impress.js](https://github.com/impress/impress.js)
-+ ~~Remove overview slide~~
-+ ~~Show presentation fullscreen (16:9)~~
+## Menu
++ Remove Import and Export menu items
++ New and Save menu items only in first section
 
 ## Components
-+ ~~Background and Surface Image select~~
-+ ~~Video select like Image select~~
-+ ~~Autoplay when slide is active pause otherwise~~
-+ ~~Sound off~~
++ Seachbox for Image and Video
++ Set max size of insering Image and Video
+
+## Bugs
++ Unintended scroll when dragging components
