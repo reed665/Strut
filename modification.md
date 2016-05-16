@@ -16,4 +16,4 @@ Strut modification
 + Pick out Strut Presentation player from whole Strut project
 
 ## Misc
-+ Remove tablets button (?)
++ ~~Remove tablets button (?) [Commented out]~~
