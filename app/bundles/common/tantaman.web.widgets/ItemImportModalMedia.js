@@ -56,6 +56,7 @@ function(Backbone) {
 		],
 		className: "itemGrabber modal hide",
 		events: {
+			"click .searchBtn": "findMedia",
 			"click .ok": "okClicked",
 			"click .pic": "picClicked",
 			"hidden": "hidden"
@@ -79,44 +80,42 @@ function(Backbone) {
 			}
 		},
 
-		render: function() {
+		render: function(notHidden) {
 			var _this = this;
 
-			// console.log('Options:', this.options);
+			_this.$el.html(JST["tantaman.web.widgets/ItemImportModalMedia"](_this.options));
+			_this.$el.modal();
 
-			this.setMediaOption(function() {
-				_this.$el.html(JST["tantaman.web.widgets/ItemImportModalMedia"](_this.options));
-				_this.$el.modal();
+			_this.$findForm = _this.$('.findForm');
+			_this.$sFileName = _this.$findForm.find('.sFileName');
 
-				_this.$mediaSelect = _this.$el.find('.media-select');
-				_this.$mediaSelect.css('text-align', 'center');
+			_this.$mediaSelect = _this.$el.find('.media-select');
 
-				_this.$okBtn = _this.$el.find(".ok");
-				_this.$okBtn.addClass('disabled');
+			_this.$okBtn = _this.$el.find(".ok");
+			_this.$okBtn.addClass('disabled');
 
+			if (!notHidden) {
 				_this.$el.modal("hide");
+			}
 
-				return _this.$el;
-
-			});
-
+			return _this.$el;
 		},
 		constructor: function ItemImportModal() {
 			Backbone.View.prototype.constructor.apply(this, arguments);
 		},
-		getMedia: function(cb) {
-			// TODO: get media.json through ajax call
-			var media = [];
-			for(var i=0; i<10; i++) {
-				this.media.forEach(function(mediaItem) {
-					media.push(mediaItem);
-				});
-			}
-			return cb(null, media);
+
+		findMedia: function() {
+			var self = this;
+			var sfilename = this.$sFileName.val();
+			console.log('searching for media:', sfilename);
+			this.setMediaOption(sfilename, function() {
+				self.render(true);
+				console.log('media loaded');
+			});
 		},
-		setMediaOption: function(cb) {
+		setMediaOption: function(sfilename, cb) {
 			var _this = this;
-			this.getMedia(function(err, media) {
+			this.getMedia(sfilename, function(err, media) {
 				if (err) {
 					console.log(err);
 					return cb();
@@ -130,6 +129,20 @@ function(Backbone) {
 				cb();
 			});
 		},
+		getMedia: function(sfilename, cb) {
+			var self = this;
+			var media = [];
+			// TODO: get media.json through ajax call
+			// $.get('ajax/test.html?mediatype=image&query=sfilename', function(mediaData) {
+				for(var i=0; i<10; i++) {
+					self.media.forEach(function(mediaItem) {
+						media.push(mediaItem);
+					});
+				}
+				return cb(null, media);
+			// });
+		},
+
 		_shortenMediaFileName: function(fileName, maxChars) {
 			if (fileName.length <= maxChars - 3) {
 				return fileName;

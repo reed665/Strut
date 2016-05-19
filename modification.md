@@ -7,7 +7,7 @@ Strut modification
 
 ## Components
 + ~~Show short FileName of Image and Video~~
-+ Seachbox for Image and Video
++ ~~Seachbox for Image and Video~~
 + Set max size of insering Image and Video
 
 ## Bugs
@@ -18,3 +18,4 @@ Strut modification
 
 ## Misc
 + ~~Remove tablets button (?) [Commented out]~~
++ Override impress defaults through the rootData

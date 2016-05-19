@@ -1,9 +1,14 @@
-<div class="modal-header">
+<div class="modal-header no-border-bottom">
 	<button class="close" data-dismiss="modal">×</button>
 	<h3>{{title}}</h3>
 </div>
+<div class="modal-header">
+	<div class="form-inline findForm">
+		<input type="text" name="sFileName" class="sFileName" placeholder="FileName">
+		<button type="submit" class="btn btn-default searchBtn">Search</button>
+	</div>
+</div>
 <div class="modal-body" style="overflow: auto;">
-	<h4>Choose a media to insert:</h4>
 	<div class="media-select">
 		{{#each media}}
 		<div class="item">
