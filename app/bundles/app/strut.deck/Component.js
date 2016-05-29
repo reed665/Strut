@@ -3,14 +3,18 @@
  */
 define(["./SpatialObject"], function(SpatialObject) {
 	var defaultScale, defaults;
+	// defaults = {
+	// 	x: config.slide.size.width / 3,
+	// 	y: config.slide.size.height / 3
+	// };
 	defaults = {
-		x: config.slide.size.width / 3,
-		y: config.slide.size.height / 3
+		x: 20,
+		y: 20
 	};
-
 	defaultScale = {
 		x: 1,
-		y: 1
+		y: 1,
+		mult: .5 // max size of component: .5 = 50% of slide size
 	};
 
 	/**
@@ -29,7 +33,8 @@ define(["./SpatialObject"], function(SpatialObject) {
 			_.defaults(this.attributes, defaults);
 			if (this.attributes.scale === undefined) {
 				this.attributes.scale = {};
-				return _.defaults(this.attributes.scale, defaultScale);
+				// return 
+				_.defaults(this.attributes.scale, defaultScale);
 			}
 		},
 

@@ -107,10 +107,10 @@ function(Backbone) {
 		findMedia: function() {
 			var self = this;
 			var sfilename = this.$sFileName.val();
-			console.log('searching for media:', sfilename);
+			// console.log('searching for media:', sfilename);
 			this.setMediaOption(sfilename, function() {
 				self.render(true);
-				console.log('media loaded');
+				// console.log('media loaded');
 			});
 		},
 		setMediaOption: function(sfilename, cb) {

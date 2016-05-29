@@ -24,9 +24,15 @@ define(["./ComponentView", './Mixers'],
 			render: function() {
 				var $video,
 					_this = this;
-				ComponentView.prototype.render.call(this);
+
+				ComponentView.prototype.render.call(this, true);
+
 				$video = $("<video controls></video>");
-				$video.append("<source preload='metadata' src='" + (this.model.get("src")) + "' type='" + (this.model.get("srcType")) + "' />");
+
+				var videoHtml = "<source preload='metadata' src='" + (this.model.get("src"));
+				videoHtml += "' type='" + (this.model.get("srcType")) + "' />"
+
+				$video.append(videoHtml);
 				$video.bind("loadedmetadata", function() {
 					_this._finishRender($(this));
 				});
@@ -42,10 +48,14 @@ define(["./ComponentView", './Mixers'],
 			 * @private
 			 */
 			_finishRender: function($video) {
+				var natW = $video[0].videoWidth;
+				var natH = $video[0].videoHeight;
+
 				this.origSize = {
-					width: $video[0].videoWidth,
-					height: $video[0].videoHeight
+					width: natW,
+					height: natH
 				};
+
 				this._setUpdatedTransform();
 			}
 		});

@@ -8,10 +8,11 @@ Strut modification
 ## Components
 + ~~Show short FileName of Image and Video~~
 + ~~Seachbox for Image and Video~~
-+ Set max size of insering Image and Video
++ ~~Scale down max size of inserting Image and Video (if needed)~~
++ Scale up size of inserting Text
 
 ## Bugs
-+ Unintended scroll when dragging components
++ ~~Unintended scroll when dragging components ({overflow: hidden} on slideContainer (?))~~
 
 ## Strut player
 + Pick out Strut Presentation player from whole Strut project

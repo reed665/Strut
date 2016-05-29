@@ -231,7 +231,9 @@ and (max-device-width : 1024px)  {
 
 
 
-
+.slideContainer {
+  overflow: hidden;
+}
 
 
 // modal overrides

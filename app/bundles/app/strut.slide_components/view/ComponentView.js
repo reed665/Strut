@@ -587,7 +587,7 @@ define(["libs/backbone",
 			 *
 			 * @returns {*}
 			 */
-			render: function() {
+			render: function(doNotSetUT) {
 				var size,
 					_this = this;
 				this.$el.html(this.__getTemplate()(this.model.attributes));
@@ -613,7 +613,9 @@ define(["libs/backbone",
 				if (size.width > 0 && size.height > 0) {
 					this.origSize = size;
 				}
-				this._setUpdatedTransform();
+				if (!doNotSetUT) {
+					this._setUpdatedTransform();
+				}
 				return this.$el;
 			},
 
@@ -631,18 +633,70 @@ define(["libs/backbone",
 				obj[window.browserPrefix + "transform"] = transformStr;
 				this.$content.css(obj);
 				scale = this.model.get("scale");
+
 				if (this.origSize != null) {
-					newWidth = scale.width || this.origSize.width;
-					newHeight = scale.height || this.origSize.height;
+					if (!scale.width || !scale.height) {
+						scale = this._downscale(scale);
+					}
+					newWidth = scale.width;
+					newHeight = scale.height;
+
 					this.$el.css({
 						width: newWidth,
 						height: newHeight
 					});
 				}
+
 				if (scale != null) {
 					this.$contentScale.css(window.browserPrefix + "transform", "scale(" + scale.x + "," + scale.y + ")");
 				}
 				this.$el.css(window.browserPrefix + "transform", "rotate(" + this.model.get("rotate") + "rad)");
+			},
+
+			_downscale: function(scale) {
+				var mult = this.model.get('scale').mult;
+
+				var maxW = config.slide.size.width * mult;
+				var maxH = config.slide.size.height * mult;
+
+				var natW = this.origSize.width;
+				var natH = this.origSize.height;
+
+				if (natW > maxW || natH > maxH) {
+					scale = this._calcscale(scale, natW, natH, maxW, maxH);
+					this.model.set('scale', scale);
+				}
+
+				return scale;
+			},
+
+			_calcscale: function(scale, natW, natH, maxW, maxH) {
+				var width = natW;
+				var height = natH;
+
+				var ratioW = 1;
+				var ratioH = 1;
+				var ratioTotal = 1;
+
+				if (natW > maxW) {
+					ratioW = natW / maxW;
+					width /= ratioW;
+					height /= ratioW;
+				}
+				if (height > maxH) {
+					ratioH = height / maxH;
+					height /= ratioH;
+					width /= ratioH;
+				}
+
+				scale.width = width;
+				scale.height = height;
+
+				ratioTotal = ratioW * ratioH;
+				scale.x = scale.x / ratioTotal;
+				scale.y = scale.y / ratioTotal;
+
+				return scale;
 			},
 
 			/**
