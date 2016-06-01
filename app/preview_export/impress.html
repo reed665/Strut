@@ -70,8 +70,8 @@
 
             document.addEventListener('impress:stepenter', function(e) {
                 if (typeof timing !== 'undefined') clearInterval(timing);
-                var transitionDuration = parseInt( e.target.getAttribute('data-transition-duration') );
-                var duration = transitionDuration || impressConfig.slideDuration;
+                var slideDuration = parseInt( e.target.getAttribute('data-slide-duration') );
+                var duration = slideDuration || impressConfig.slideDuration;
                 timing = setInterval(api.next, duration);
             });
 

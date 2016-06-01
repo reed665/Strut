@@ -1,5 +1,5 @@
-define(["handlebars", "common/Math2", "marked", "strut/deck/Utils"],
-function(Handlebars, Math2, marked, DeckUtils) {
+define(["handlebars", "common/Math2", "marked", "strut/deck/Utils", "./impressConfig"],
+function(Handlebars, Math2, marked, DeckUtils, impressConfig) {
 	var ImpressGenerator;
 	var slideConfig = window.config.slide;
 
@@ -186,6 +186,8 @@ function(Handlebars, Math2, marked, DeckUtils) {
 
 			deckAttrs.overviewX = (maxX + minX) / 2;
 			deckAttrs.overviewY = (maxY + minY) / 2;
+
+			deck.attributes.impressConfig = impressConfig;
 
 			return JST["strut.presentation_generator.impress/ImpressTemplate"](deck);
 		};

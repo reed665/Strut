@@ -31,11 +31,13 @@
 
 <div class="bg {{#isBGClass surface}}{{surface}} {{/isBGClass}}strut-surface">
 	<div class="bg innerBg">
-		<div id="impress">
+		{{#with impressConfig}}
+		<div id="impress" data-width="{{{width}}}" data-height="{{{height}}}" data-max-scale="{{{maxScale}}}" data-min-scale="{{{minScale}}}">
+		{{/with}}
 			{{#slides.models}}
 				{{#attributes}}
-				<div class="step" data-state="strut-slide-{{index}}{{#determineSurface .. ../../..}}{{/determineSurface}}" data-x="{{#scaleX x}}{{/scaleX}}" data-y="{{#scaleY y}}{{/scaleY}}" {{#if rotateX}}data-rotate-x="{{#toDeg rotateX}}{{/toDeg}}"{{/if}}  {{#if rotateY}}data-rotate-y="{{#toDeg rotateY}}{{/toDeg}}"{{/if}} {{#if rotateZ}}data-rotate-z="{{#toDeg rotateZ}}{{/toDeg}}"{{/if}} {{#if z}}data-z="{{z}}"{{/if}} {{#if impScale}}data-scale="{{impScale}}"{{/if}} {{#if durTime}}data-transition-duration="{{durTime}}"{{/if}} >
-					<div class="{{#determineBG .. ../../..}}{{/determineBG}} slideContainer strut-slide-{{index}}" style="width: 1920; height: 1080px;">
+				<div class="step" data-state="strut-slide-{{index}}{{#determineSurface .. ../../..}}{{/determineSurface}}" data-x="{{#scaleX x}}{{/scaleX}}" data-y="{{#scaleY y}}{{/scaleY}}" {{#if rotateX}}data-rotate-x="{{#toDeg rotateX}}{{/toDeg}}"{{/if}}  {{#if rotateY}}data-rotate-y="{{#toDeg rotateY}}{{/toDeg}}"{{/if}} {{#if rotateZ}}data-rotate-z="{{#toDeg rotateZ}}{{/toDeg}}"{{/if}} {{#if z}}data-z="{{z}}"{{/if}} {{#if impScale}}data-scale="{{impScale}}"{{/if}} {{#if durTime}}data-slide-duration="{{durTime}}"{{/if}} >
+					<div class="{{#determineBG .. ../../..}}{{/determineBG}} slideContainer strut-slide-{{index}}" style="width: {{../../impressConfig.width}}px; height: {{../../impressConfig.height}}px;">
 						<div class="themedArea">
 						{{#marked markdown}}{{/marked}}
 						</div>

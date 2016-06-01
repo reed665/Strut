@@ -207,13 +207,13 @@ var innerBg = document.querySelector('.innerBg');
     
     // some default config values.
     var defaults = {
-        width: 1920,
-        height: 1080,
+        width: 1024,
+        height: 768,
+        maxScale: 1,
         minScale: 0,
-        maxScale: 4,
-        
+
         perspective: 1000,
-        
+
         transitionDuration: 1000
     };
     
@@ -365,7 +365,6 @@ var innerBg = document.querySelector('.innerBg');
                 perspective: toNumber( rootData.perspective, defaults.perspective ),
                 transitionDuration: toNumber( rootData.transitionDuration, defaults.transitionDuration )
             };
-            
             windowScale = computeWindowScale( config );
             
             // wrap steps with "canvas" element
