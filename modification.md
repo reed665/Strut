@@ -9,7 +9,7 @@ Strut modification
 + ~~Show short FileName of Image and Video~~
 + ~~Seachbox for Image and Video~~
 + ~~Scale down max size of inserting Image and Video (if needed)~~
-+ Scale up size of inserting Text
++ ~~Increase size of inserting Text~~
 
 ## Bugs
 + ~~Unintended scroll when dragging components ({overflow: hidden} on slideContainer (?))~~

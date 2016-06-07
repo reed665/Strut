@@ -1,5 +1,4 @@
-define(['libs/backbone',
-		'framework/ServiceCollection'],
+define(['libs/backbone', 'framework/ServiceCollection'],
 function(Backbone, ServiceCollection) {
 	return Backbone.Model.extend({
 		initialize: function() {
@@ -7,7 +6,8 @@ function(Backbone, ServiceCollection) {
 				this._editorModel.registry,
 				'strut.LogoMenuItemProvider',
 				this._convertServiceEntry.bind(this)
-				);
+			);
+			// console.log(this.items);
 		},
 
 		_convertServiceEntry: function(entry) {

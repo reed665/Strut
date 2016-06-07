@@ -16,10 +16,10 @@ function(ServiceCollection, MenuItem, CmdListFactory, UndoRedoMenuItem) {
 			});
 		} else {
 			return new MenuItem({
-					title: actionEntry.meta().title,
-					handler: actionEntry.service(),
-					hotkey: actionEntry.meta().hotkey
-				});
+				title: actionEntry.meta().title,
+				handler: actionEntry.service(),
+				hotkey: actionEntry.meta().hotkey
+			});
 		}
 	}
 
@@ -52,10 +52,9 @@ function(ServiceCollection, MenuItem, CmdListFactory, UndoRedoMenuItem) {
 	return {
 		initialize: function(registry) {
 			actionProviders = new ServiceCollection(
-					registry,
-					'strut.editor.glob.action'
-				);
-
+				registry,
+				'strut.editor.glob.action'
+			);
 
 			registry.register({
 				interfaces: 'strut.LogoMenuItemProvider'
