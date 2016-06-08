@@ -7,7 +7,7 @@ define(["strut/slide_components/view/ThreeDRotatableComponentView",
 	"strut/deck/Utils"],
 	function(ThreeDComponentView, SlideDrawer, empty, DeckUtils) {
 		var overviewSize = window.config.slide.overviewSize;
-
+		
 		/**
 		 * This is a special kind of component, shown in transition editor (Overview mode). It inherits a lot of component
 		 * UI goodies such as drag-n-drop ability, but looks like a slide snapshot.

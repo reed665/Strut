@@ -189,9 +189,12 @@ define(['libs/backbone',
 				var offsetY = e.pageY - this.$slides.position().top;
 
 				// TODO: too much magic and silliness going on here
-				var newPos = (((offsetY + 40) / 114) | 0) * 114 - 5;
-				this._contextMenu.reposition({x: this.$slides.width() / 2 - this._contextMenu.$el.outerWidth() / 2, y: newPos});
-				this._contextMenu.slideIndex(Math.ceil(newPos / 114));
+				var newPos = (((offsetY + 40) / 91) | 0) * 91 - 5;
+				this._contextMenu.reposition({
+					x: this.$slides.width() / 2 - this._contextMenu.$el.outerWidth() / 2,
+					y: newPos
+				});
+				this._contextMenu.slideIndex(Math.ceil(newPos / 91));
 			},
 
 			/**

@@ -6,8 +6,8 @@ define(function () {
 				height: 1080
 			},
 			overviewSize: {
-				width: 75,
-				height: 50
+				width: 80,
+				height: 45
 			}
 		}
 	};

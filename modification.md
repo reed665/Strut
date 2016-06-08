@@ -20,5 +20,6 @@ Strut modification
 ## Misc
 + ~~Remove tablets button (?) [Commented out]~~
 + ~~Override impress defaults through the rootData~~
-+ Slide snapshot: wrong proportions, video components not showing
++ ~~Slide snapshot: wrong proportions~~
++ Slide snapshot: video components not showing
 + Can't control components order overlay
