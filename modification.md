@@ -10,9 +10,11 @@ Strut modification
 + ~~Seachbox for Image and Video~~
 + ~~Scale down max size of inserting Image and Video (if needed)~~
 + ~~Increase size of inserting Text~~
++ Need to increase default text size
 
 ## Bugs
 + ~~Unintended scroll when dragging components ({overflow: hidden} on slideContainer (?))~~
++ Hard to catch new slide button when no one slide
 
 ## Strut player
 + Pick out Strut Presentation player from whole Strut project

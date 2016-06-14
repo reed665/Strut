@@ -224,7 +224,6 @@ define(['libs/backbone'], function(Backbone) {
     setFontSize: function(e) {
       var textBox = this.model.get('editableModel');
       var value = extractValue(e);
-
       textBox.set('size', (value |= 0));
 
       // TODO: we need to bind this to the editable model...
