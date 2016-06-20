@@ -26,9 +26,9 @@ function(MenuItem, ServiceCollection, ExportModal, lang) {
 	return {
 		initialize: function(registry) {
 			exporterCollection = new ServiceCollection(
-											registry, 'strut.exporter',
-											ServiceCollection.toServiceConverter
-										);
+				registry, 'strut.exporter',
+				ServiceCollection.toServiceConverter
+			);
 
 			registry.register({
 				// again, shouldn't call out LogoMenuItemProvider explicitly

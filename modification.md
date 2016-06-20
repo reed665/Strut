@@ -2,15 +2,15 @@ Strut modification
 ==================
 
 ## Menu
-+ Remove Import and Export menu items
-+ New and Save menu items only in first section
++ ~~Remove Import and Export menu items~~
++ ~~New and Save menu items only in first section~~
 
 ## Components
 + ~~Show short FileName of Image and Video~~
 + ~~Seachbox for Image and Video~~
 + ~~Scale down max size of inserting Image and Video (if needed)~~
 + ~~Increase size of inserting Text~~
-+ Need to increase default text size
++ ~~Need to increase default text size~~
 
 ## Bugs
 + ~~Unintended scroll when dragging components ({overflow: hidden} on slideContainer (?))~~

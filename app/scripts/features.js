@@ -2,14 +2,14 @@ define([
 	'framework/ServiceRegistry',
 	'strut/etch_extension/main',
 	'strut/storage/main',
-	'strut/logo_button/main',
+	// 'strut/logo_button/main',
 	'strut/themes/main',
 	'strut/editor/main',
-	'strut/exporter/json/main',
-	'strut/exporter/zip/browser/main',
-	'strut/importer/json/main',
-	'strut/importer/main',
-	'strut/exporter/main',
+	// 'strut/exporter/json/main',
+	// 'strut/exporter/zip/browser/main',
+	// 'strut/importer/json/main',
+	// 'strut/importer/main',
+	// 'strut/exporter/main',
 	'strut/presentation_generator/impress/main',
 	'strut/presentation_generator/main',
 	'tantaman/web/saver/main',
@@ -20,7 +20,7 @@ define([
 	'tantaman/web/local_storage/main',
 	// 'tantaman/web/remote_storage/main',
 	'strut/startup/main'
-	],
+],
 function(ServiceRegistry) {
 	var registry = new ServiceRegistry();
 
