@@ -1,35 +1,12 @@
-**Note:** I've been working on Strut2.0: https://github.com/tantaman/strut2
-
 Strut
 =======
 
-[![Facelift](https://f.cloud.github.com/assets/1009003/515405/f1003c6a-be74-11e2-84b9-14776c652afb.png)](http://strut.io)
-
 #### A GUI / Authoring Tool for ImpressJS ####
 
-Don't know what ImpressJS is?  Check out the ImpressJS demo presentation: http://bartaz.github.com/impress.js/#/bored
-
-### Start using Strut! http://strut.io/editor/
-(works in Firefox, Chrome and Safari with basic support for IE10)
-
-### Official Website: http://strut.io ###
-
-#### Learn a bit about Strut
-* http://www.youtube.com/watch?v=TTpiDXEIulg
-* previous video: http://www.youtube.com/watch?v=zA5s8wwme44
-
-
-
-
-### Twitter: [@StrutPresents](https://twitter.com/strutpresents)
-
-
-### Mailing List ###
-strut-presentation-editor@googlegroups.com
+Don't know what ImpressJS is?  Check out the ImpressJS demo presentation: http://impress.github.io/impress.js/#/bored
 
 ### Development/Building ###
 To build your own version of Strut you'll need Grunt v0.4.0 or later.
-
 
 1. Install the latest Grunt: `npm install -g grunt-cli`
 2. Clone Strut: `git clone git://github.com/tantaman/Strut.git`
@@ -46,7 +23,6 @@ v0.5.3 - Positioning and transformations of components in edit mode
 now exactly match the positioning and transformations of components in the final presentation.
 
 ### Contributing ###
-
 
 `Strut` is composed of several bundles which provide distinct features to `Strut`.  The set of bundles that compose
 `Strut` are defined in https://github.com/tantaman/Strut/blob/master/app/scripts/features.js
